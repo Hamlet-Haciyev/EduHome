@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model VmTeacher
+
+
+@await Component.InvokeAsync("VcBanner")
+<!-- Teacher Start -->
+<div class="teacher-area pt-150 pb-105">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Teachers)
+            {
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="single-teacher mb-45">
+                        <div class="single-teacher-img">
+                            <a href="teacher-details.html"><img src="img/teacher/@item.Image" alt="teacher"></a>
+                        </div>
+                        <div class="single-teacher-content text-center">
+                            <h2><a href="teacher-details.html">@item.Name</a></h2>
+                            <h4>@item.Position</h4>
+                            <ul>
+                                @foreach (var item1 in Model.TeacherToSocials)
+                                {
+
+                                    if (item1.Teacher_Id == item.Id)
+                                    {
+                                        @foreach (var social in Model.Teacher_Socials)
+                                        {
+                                            if (social.Id == item1.Teacher_Social_Id)
+                                            {
+                                                <li>
+                                                    <a href="https://www.facebook.com/devitems/?ref=bookmarks">
+                                                        <i class="@social.Icon"></i>
+                                                    </a>
+                                                </li>
+                                            }
+                                        }
+                                    }
+                                }
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+

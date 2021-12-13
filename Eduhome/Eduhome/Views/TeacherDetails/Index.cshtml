@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model VmTeacherDetail
+@await Component.InvokeAsync("VcBanner");
+<!-- Teacher Start -->
+<div class="teacher-details-area pt-150 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                <div class="teacher-details-img">
+                  
+                        <img src="img/teacher/@Model.Teacher.Image" alt="teacher">
+                    
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="teacher-details-content ml-50">
+                 
+                        <h2>@Model.Teacher.Name</h2>
+                        <h5>@Model.Teacher.Position</h5>
+                        <h4>about me</h4>
+                        <p>
+                            @Model.Teacher.About
+                        </p>
+                        <ul>
+                            @{
+                                string hobbie = "";
+
+                                <li><span>degree: </span>@Model.Teacher.Degree</li>
+                                <li><span>experience: </span>@Model.Teacher.Experience</li>
+                                @foreach (var item in Model.Teacher.Teacher_Hobbies)
+                                {
+                                    @foreach (var item1 in Model.Hobbies)
+                                    {
+                                        if (item.Hobbie_Id == item1.Id)
+                                        {
+                                            hobbie += item1.Name + " ,";
+                                        }
+                                    }
+
+                                }
+                                <li><span>hobbies: </span>@hobbie</li>
+
+                                <li><span>faculty: </span>@Model.Teacher.Faculty</li>
+                            }
+
+                        </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="teacher-contact">
+                    <h4>contact information</h4>
+                    <p><span>mail me : </span>@Model.Teacher.Mail</p>
+                    <p><span>make a call : </span>@Model.Teacher.Phone</p>
+                    <p><span>skype : </span> @Model.Teacher.Skype</p>
+                    <ul>
+                        @foreach (var item in Model.Teacher.TeacherToSocials)
+                        {
+                            @foreach (var item1 in Model.Teacher_Socials)
+                            {
+                                if (item1.Id == item.Teacher_Social_Id)
+                                {
+                                    <li>
+                                        <a href="@item.Link">
+                                            <i class="@item1.Icon"></i>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-8">
+                <div class="skill-area">
+                    <h4>skills</h4>
+                </div>
+                <div class="skill-wrapper">
+                    <div class="row">
+
+                            @foreach (var item1 in Model.Teacher.Teacher_Skills)
+                            {
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (item1.Skill_Id == skill.Id)
+                                    {
+                                        <div class="col-sm-4">
+                                            <div class="skill-bar-item">
+                                                <span>@skill.Name</span>
+                                                <div class="progress">
+                                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @item1.Percent%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                                        <span class="text-top">@item1.Percent%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            }
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
