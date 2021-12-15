@@ -6,10 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Eduhome.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = "User, Moderator")]
+
     public class BannerController : Controller
     {
         private readonly AppDbContext _appDbContext;

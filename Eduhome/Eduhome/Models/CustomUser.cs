@@ -21,5 +21,7 @@ namespace Eduhome.Models
         [MaxLength(30)]
         public string Surname { get; set; }
         public DateTime CreatedDate { get; set; }
+        [NotMapped]
+        public string RoleId { get; set; }
     }
 }

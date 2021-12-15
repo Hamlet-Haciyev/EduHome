@@ -338,3 +338,7 @@ C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\bin\Debug\net5.0\Microso
 C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Register.cshtml.g.cs
 C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Login.cshtml.g.cs
+C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Users.cshtml.g.cs
+C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\RoleCreate.cshtml.g.cs
+C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\UpdateUser.cshtml.g.cs
+C:\Users\FX505GT\Desktop\New folder (2)\Eduhome\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Roles.cshtml.g.cs
